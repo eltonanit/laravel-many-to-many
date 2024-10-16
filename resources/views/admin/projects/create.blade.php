@@ -27,8 +27,21 @@
                                @foreach ($types as $type)
                                        <option value="{{ $type->id }}" @selected($type->id == old('type_id'))>{{ $type->name }}</option>
                                @endforeach
-
                             </select>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="" class="control-label">Seleziona le tecnologie</label>
+                            <div>
+                            @foreach ($technologies as $technology )
+                                  <div class="form-check-inline">
+                                    <input type="checkbox"  name="technologies[]" id="" class="form-check-inline"  value="{{$technology->id}}">
+                                    <label class="form-check-label"> {{$technology->name}}</label>
+                                
+                                @endforeach
+                               </div>
+
+                            </div>
                         </div>
 
                         <div>
