@@ -35,7 +35,9 @@
                             <div>
                             @foreach ($technologies as $technology )
                                   <div class="form-check-inline">
-                                    <input type="checkbox"  name="technologies[]" id="" class="form-check-inline"  value="{{$technology->id}}">
+                                    <input type="checkbox" name="technologies[]" id="" 
+                                    class="form-check-inline" value="{{$technology->id}}" 
+                                    {{ is_array(old('technologies')) && in_array($technology->id, old('technologies')) ? 'checked' : '' }}>
                                     <label class="form-check-label"> {{$technology->name}}</label>
                                 
                                 @endforeach
